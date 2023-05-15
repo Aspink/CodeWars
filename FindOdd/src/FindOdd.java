@@ -8,12 +8,11 @@ public class FindOdd {
         Map<Integer, Long> countsMap = Arrays.stream(a)
                 .boxed()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        int odd;
+        int odd = 0;
         for (Map.Entry<Integer, Long> entry : countsMap.entrySet()) {
             if (entry.getValue() % 2 != 0) {
                 odd = entry.getKey();
             }
-            break;
         }
         return odd;
     }

@@ -8,11 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SolutionTest {
     @ParameterizedTest(name = "Quadrant {0}: ({1}, {2})")
     @CsvSource(textBlock = """
-        1,       1,   2
-        1,       3,   5
-        2,     -10, 100
-        3,      -1,  -9
-        4,      19, -56
+        1,       5,   15
+        2,       -3,   15
+        2,     -1, 12
+        3,      -9,  -1
+        3,      -15,   -12
+        4,      20, -21
+        4,      11, -43
     """)
     @DisplayName("Sample tests") void sampleTests(int expected, int x, int y) {
         assertEquals(expected, Kata.quadrant(x, y));

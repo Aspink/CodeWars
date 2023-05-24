@@ -5,13 +5,12 @@ import static java.util.Arrays.*;
 
 public class Kata {
     public static int[] flip(char dir, int[] arr) {
-        ArrayList<Integer> array = new ArrayList<>(Collections.singletonList(arr));
-        array.sort();
+        Arrays.sort(arr);
         if(dir == 'L') {
-            Collections.reverse(array);
-        }
-        for(int i = 0; i < array.size(); i++) {
-            arr[i] = array.get(i);
+            int[] array = Arrays.copyOf(arr, arr.length);
+            for(int i = 0; i < arr.length ; i++) {
+                arr[i] = array[arr.length - 1 - i];
+            }
         }
         return arr;
     }
